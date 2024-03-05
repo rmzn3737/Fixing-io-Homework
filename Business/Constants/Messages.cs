@@ -15,6 +15,7 @@ namespace Business.Constants
         public static string CoursesListed ="Ürünler listelendi.";
         public static string CourseCountOfCategoryError="Bir kategoride en fazla 10 ürün olabilir.";
         public static string CourseNameAlreadyExist="Bu isimde zaten başka bir ürün var.";
-        internal static string CategoryLimitExceded="Kategori limiti aşıldığı için kurs eklenemedi.";
+        public static string CategoryLimitExceded="Kategori limiti aşıldığı için kurs eklenemedi.";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
     }
 }

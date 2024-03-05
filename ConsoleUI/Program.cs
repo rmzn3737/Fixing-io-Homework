@@ -29,7 +29,7 @@ internal class Program
 
         var result = courseManager.GetCourseDetails();
 
-        if (result.Succses==true)//Seçtiğin kategoriye uygun kurs varsa ona göre bir ekran yapıyor.
+        if (result.Success==true)//Seçtiğin kategoriye uygun kurs varsa ona göre bir ekran yapıyor.
         {
 
             //*****Dikkat*****

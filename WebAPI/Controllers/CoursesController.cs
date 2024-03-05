@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
             //ICourseService courseService = new CourseManager(new EfCourseDal());
             var result = _courseService.GetAll();
 
-            if (result.Succses)
+            if (result.Success)
             {
                 return Ok(result.Data);
             }
@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
         public IActionResult GetById(int id)
         {
             var result = _courseService.GetByID(id);
-            if (result.Succses)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -52,7 +52,7 @@ namespace WebAPI.Controllers
         public IActionResult Add(Course course)
         {
             var result = _courseService.Add(course);
-            if (result.Succses)
+            if (result.Success)
             {
                 return Ok(result);
             }

@@ -10,17 +10,17 @@ namespace Core.Utilities.Results
     {
         
 
-        public Result(bool succses, string message):this(succses)//İki constructoru birden çalıştırıyor. Constructorun Base'ler veya kendi içindeki yapılarla çalışmasına güzel bir örnek.
+        public Result(bool Success, string message):this(Success)//İki constructoru birden çalıştırıyor. Constructorun Base'ler veya kendi içindeki yapılarla çalışmasına güzel bir örnek.
         {
             Message=message;
         }
 
-        public Result(bool succses)//Overloading yaptık, mesajsız şekilde yaptık.
+        public Result(bool Success)//Overloading yaptık, mesajsız şekilde yaptık.
         {
-            Succses = succses;
+            Success = Success;
         }
 
-        public bool Succses { get; }
+        public bool Success { get; }
         public string Message { get; }
     }
 }

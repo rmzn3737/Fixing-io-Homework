@@ -7,6 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -71,6 +72,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CourseDetailDto>>(_courseDal.GetCourseDetails()) ;
         }
         //Claim= İddia etmek. Encryption, Hashing, karşı taraf okuyamasın diye parolayı hasleriz.Salting, tuzlama. Encryption, geri döünüşü olan veri.
+        [SecuredOperation("course.add,admin")]
         [ValidationAspect(typeof(CourseValidator))]
         public IResult Add(Course course)
         {
@@ -112,9 +114,9 @@ namespace Business.Concrete
             _courseDal.Add(course);
             return new SuccessResult(Messages.CourseAdded);
 
-            //if (CheckIfCourseCountOfCategoryCorrect(course.CategoryId).Succses)
+            //if (CheckIfCourseCountOfCategoryCorrect(course.CategoryId).Success)
             //{
-            //    if (CheckIfCourseNameExists(course.CourseName).Succses)
+            //    if (CheckIfCourseNameExists(course.CourseName).Success)
             //    {
                     
             //    }
